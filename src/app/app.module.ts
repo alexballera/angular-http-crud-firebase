@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
