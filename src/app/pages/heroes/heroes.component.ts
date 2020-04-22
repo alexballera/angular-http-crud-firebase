@@ -12,11 +12,19 @@ export class HeroesComponent implements OnInit {
 
   heroes: HeroeModel[] = [];
 
+  cargando = false;
+
   constructor(private heroesServices: HeroesService) { }
 
   ngOnInit() {
+
+    this.cargando = true;
+
     this.heroesServices.getHeroes()
-    .subscribe(resp => this.heroes = resp);
+    .subscribe(resp => {
+      this.heroes = resp;
+      this.cargando = false;
+    });
   }
 
   borrarHeroe(heroe: HeroeModel, i: number) {
